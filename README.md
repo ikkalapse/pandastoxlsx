@@ -39,5 +39,6 @@ exporter.export()
 
 ```
 
-Output:
+Output:  
+
 ![example.png](example.png)
