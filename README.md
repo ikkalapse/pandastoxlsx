@@ -1,9 +1,5 @@
 # pandastoxlsx
 
-...
-
-## Use case
-
 The general use of the class is described in the following detailed example:
 
 ```python
