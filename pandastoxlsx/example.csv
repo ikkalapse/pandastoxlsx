@@ -1,0 +1,9 @@
+group,result,object,type,status,title,description
+0,0,1,a,1,Title 0.1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur, nulla in elementum lobortis, metus ipsum tincidunt dolor, sed eleifend eros turpis eget nisi."
+0,0,2,b,1,Title 0.2,"Nam metus libero, pretium sit amet ligula ac, tempus hendrerit mi. Donec a elementum neque. Sed arcu ligula, ornare eu erat accumsan, suscipit vulputate libero."
+0,0,3,c,2,Title 0.3,"Vivamus et vulputate magna, non venenatis elit."
+1,0,4,a,3,Title 1.1,"Vivamus maximus aliquet luctus. Mauris sed massa rutrum, tempus orci eu, mollis est."
+1,0,5,a,2,Title 1.2,"Etiam felis orci, ullamcorper sit amet tempor vel, cursus eget eros. "
+1,0,6,b,4,Title 1.3,Donec auctor luctus erat et suscipit
+2,0,7,b,1,Title 2.1,Donec non tellus sed risus commodo sodales. 
+2,0,8,c,2,Title 2.2,Suspendisse lacinia nunc eget neque bibendum tristique.
