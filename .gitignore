@@ -1,3 +1,4 @@
 /.venv/
 /.idea/
-/pandastoxlsx/__pycache__
+/pandastoxlsx/__pycache__/
+*.pyc
