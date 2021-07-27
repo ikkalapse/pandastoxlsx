@@ -1,7 +1,6 @@
 import string
 import re
 import xlsxwriter
-#import pandas as pd
 
 
 class PandasToXLSX:
