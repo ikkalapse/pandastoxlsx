@@ -113,6 +113,9 @@ class PandasToXLSX:
             for row in self.df[self.df[self.group_col] == group].itertuples(index=False):
                 for col_num, value in enumerate(row):
                     try:
+                        if self.group_name_rule == "text" and \
+                                list(self.df.columns)[col_num] == self.group_col:
+                            value = ''
                         self.worksheet.write(cur_row, col_num, value,
                                              self._columns_formats[list(self.df.columns)[col_num]]['format_cell'])
                     except:
