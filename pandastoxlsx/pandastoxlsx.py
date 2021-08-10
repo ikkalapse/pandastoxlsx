@@ -42,10 +42,16 @@ class PandasToXLSX:
                'columns': None
                }
 
-    def __init__(self, df_long, xlsx_filename, group_column="group", config=None):
+    _group_name_rules = ["number", "text"]
+
+    def __init__(self, df_long, xlsx_filename, group_column="group", config=None, **kwargs):
         self.df = df_long  # датафрейм с данными для экспорта
         self.xlsx_filename = xlsx_filename  # имя XLSX-файла
         self.group_col = group_column
+        self.group_name_rule = kwargs.get("group_name_rule", self._group_name_rules[0])
+        self.group_name_rule = self.group_name_rule \
+            if self.group_name_rule in self._group_name_rules \
+            else self._group_name_rules[0]
         # конфигурация для XLSX-файла
         self._config.update(config)
         # Инициализация переменных
@@ -90,13 +96,18 @@ class PandasToXLSX:
         for col_num, value in enumerate(self.df.columns.values):
             self.worksheet.write(0, col_num, value, self._formats['table_header'])
 
+    def _get_group_name(self, group_ind, group):
+        if self.group_name_rule == "number":
+            return "GROUP #" + str(group_ind + 1)
+        return group
+
     def write_data(self):
         """Записывает данные на лист."""
 
         cur_row = 1 + self.group_blank_rows
         for group_ind, group in enumerate(self.groups):
             self.worksheet.merge_range(cur_row, 0, cur_row, self.prop_len - 1,
-                                       "GROUP #" + str(group_ind + 1),
+                                       self._get_group_name(group_ind, group),
                                        self._formats['group_header'])
             cur_row += 1
             for row in self.df[self.df[self.group_col] == group].itertuples(index=False):
