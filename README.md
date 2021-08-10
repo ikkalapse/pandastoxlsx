@@ -1,5 +1,7 @@
 # pandastoxlsx
 
+The class exports a dataframe into XLSX-file splitting it into groups using single column.  
+
 The general use of the class is described in the following detailed example:
 
 ```python
