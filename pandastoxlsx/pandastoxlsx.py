@@ -116,6 +116,7 @@ class PandasToXLSX:
                         if self.group_name_rule == "text" and \
                                 list(self.df.columns)[col_num] == self.group_col:
                             value = ''
+                            self.worksheet.set_row(cur_row, 100)
                         self.worksheet.write(cur_row, col_num, value,
                                              self._columns_formats[list(self.df.columns)[col_num]]['format_cell'])
                     except:
